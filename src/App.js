@@ -31,7 +31,6 @@ function App() {
 
     }
   }
-
   return (
     <>
       <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} ></Navbar>
