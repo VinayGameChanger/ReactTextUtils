@@ -48,14 +48,13 @@ export default function TextForm(props) {
     <div className="container">
       <h1 className={`my-3 text-${props.mode === 'dark' ? 'light' : 'dark'}`}>{props.heading}</h1>
       <div className="mb-3">
-        <textarea value={text} className={`form-control my-3 text-${props.mode === 'dark' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+        <textarea value={text} className={`form-control my-3 text-${props.mode === 'dark' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode === 'dark' ? '#4f4a6e' : 'white' }} onChange={handleOnChange} id="myBox" rows="8"></textarea>
       </div>
-      <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button>
-      <button className="btn btn-primary mx-2" onClick={handleLowerClick}>Convert to LowerCase</button>
-      {/* <button className="btn btn-primary mx-2" onClick={handleBoldClick}>Convert to Bold</button> */}
-      <button className="btn btn-primary" onClick={handleExtraSpace}>Remove Extra Space</button>
-      <button className="btn btn-danger mx-2" onClick={handleCopyClick}>Copy Text</button>
-      <button className="btn btn-danger" onClick={handleClearClick}>Clear Text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLowerClick}>Convert to LowerCase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpace}>Remove Extra Space</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handleCopyClick}>Copy Text</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handleClearClick}>Clear Text</button>
 
     </div>
     <div className="container my-3">
